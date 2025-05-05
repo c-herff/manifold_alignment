@@ -14,7 +14,7 @@ if __name__ == '__main__':
     dat = sio.loadmat('ds/Mihili_CO_VR_2014-03-03.mat')['trial_data'][0]
     numTrials = dat.shape[0]
 
-    # Pick random 8*5 trials (if only I knew how to identify the target)
+    # Pick random trials (if only I knew how to identify the target)
     np.random.seed(1337)
     numPicks = 120
     downFactor = 3
@@ -35,7 +35,7 @@ if __name__ == '__main__':
     print(data.shape,target.shape)
     np.save('ds/monkey_feat.npy',data)
     np.save('ds/monkey_target.npy',target[:,0])
-    
+
     # Test decoding to get a feeling whether this is working
     from sklearn.model_selection import train_test_split
     from sklearn.datasets import fetch_california_housing, load_diabetes
