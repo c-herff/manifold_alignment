@@ -88,7 +88,7 @@ if __name__ == '__main__':
             reconstruction[sNr,tNr] = np.corrcoef(ysource_test,prediction)[0,1]
             print('From %s to %s gives %f' % (sNr,tNr,reconstruction[sNr,tNr]))
             # Non-matching baselines       
-            alpha = 0.5
+            alpha = 0.05
             randCorrs = np.zeros((nComponents,nRandsCCA))
             for rIt in range(nRandsCCA):
                 jointSpaceSource, jointSpaceTarget = cca.fit_transform(Xsource_train[idxS],Xtarget_train[np.random.permutation(idxT)])
